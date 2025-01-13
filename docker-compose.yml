@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  nextcloud-aio-mastercontainer:
+    image: nextcloud/all-in-one:latest
+    container_name: nextcloud-aio-mastercontainer
+    restart: always
+    ports:
+      - "8080:8080" # Port pour accéder à l'interface AIO
+    volumes:
+      - nextcloud_aio_master:/mnt/docker-aio-config # Volume pour la configuration
+    environment:
+      - APACHE_PORT=11000
+      - APACHE_IP_BINDING=0.0.0.0 # Adapter si nécessaire
+      - NEXTCLOUD_DATADIR=/mnt/data
+
+volumes:
+  nextcloud_aio_master:
