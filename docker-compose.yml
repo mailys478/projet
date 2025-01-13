@@ -23,7 +23,7 @@ services:
       - "443:443" # Port pour accéder à Nextcloud via Nginx
       - "80:80"   # Redirection HTTP vers HTTPS (optionnel)
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro # Configuration personnalisée de Nginx
+      - /home/debian/nginx.conf:/etc/nginx/nginx.conf:ro # Configuration personnalisée de Nginx
       - /etc/letsencrypt:/etc/letsencrypt:ro # Certificats SSL (optionnel)
     depends_on:
       - nextcloud-aio-mastercontainer
