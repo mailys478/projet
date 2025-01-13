@@ -15,5 +15,6 @@ services:
       - APACHE_IP_BINDING=0.0.0.0 # Adapter si nécessaire
       - NEXTCLOUD_DATADIR=/mnt/data
 
-volumes:
+volumes: # If you want to store the data on a different drive, see https://github.com/nextcloud/all-in-one#how-to-store-the-filesinstallation-on-a-separate-drive
   nextcloud_aio_mastercontainer:
+    name: nextcloud_aio_mastercontainer
