@@ -8,7 +8,7 @@ services:
     ports:
       - "8080:8080" # Port pour accéder à l'interface AIO
     volumes:
-      - nextcloud_aio_master:/mnt/docker-aio-config # Volume pour la configuration
+      - nextcloud_aio_mastercontainer:/mnt/docker-aio-config # Volume correct
       - /var/run/docker.sock:/var/run/docker.sock # Ajout du socket Docker
     environment:
       - APACHE_PORT=11000
@@ -16,4 +16,4 @@ services:
       - NEXTCLOUD_DATADIR=/mnt/data
 
 volumes:
-  nextcloud_aio_master:
+  nextcloud_aio_mastercontainer:
